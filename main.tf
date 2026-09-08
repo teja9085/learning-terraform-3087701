@@ -26,7 +26,7 @@ module "blog_vpc" {
 
   tags = {
     Terraform = "true"
-    Environment = "dev-test1"
+    Environment = "dev"
   }
 }
 
