@@ -1,27 +1,3 @@
-terraform {
-  required_version = ">= 1.5.0"
-
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
-
-provider "aws" {
-  region = "us-west-2"
-}
-
-#################################################
-# Variables
-#################################################
-
-variable "instance_type" {
-  type    = string
-  default = "t2.micro"
-}
-
 #################################################
 # Latest Amazon Linux 2 AMI
 #################################################
@@ -163,16 +139,4 @@ resource "aws_instance" "blog" {
   tags = {
     Name = "LearningTerraform"
   }
-}
-
-#################################################
-# Outputs
-#################################################
-
-output "instance_id" {
-  value = aws_instance.blog.id
-}
-
-output "public_ip" {
-  value = aws_instance.blog.public_ip
 }
